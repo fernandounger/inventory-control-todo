@@ -1,0 +1,34 @@
+<div class="container__create">
+  <form [formGroup]="form" (submit)="OnSubmit()">
+    <div>
+      <label for="produto">Produto:</label>
+        <input  id="produto" type="text" formControlName="nome" placeholder="Nome do produto">
+        <span *ngIf="f['nome'].invalid && (f['nome'].dirty || f['nome'].touched)">
+          <span  *ngIf="f['nome'].errors?.['required']">Campo é obrigatório</span>
+        </span>
+    </div>
+    <div>
+      <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" formControlName="quantidade" placeholder="Digite a quantidade">
+    </div>
+    <div>
+      <label for="fornecedor">Fornecedor:</label>
+        <select formControlName="fornecedor" placeholder="Escolha um fornecedor">
+          <option value="" disabled selected>Escolha um fornecedor</option>
+            <option *ngFor="let fornecedor of fornecedores" [value]="fornecedor">{{fornecedor}}</option>
+          </select>
+    </div>
+    <div>
+        <label for="validade">Validade:</label>
+        <input type="date" formControlName="validade">
+    </div>
+    <div>
+      <label for="categoria">Categoria:</label>
+      <select formControlName="categoria">
+        <option value="" disabled selected>Escolha uma categoria</option>
+        <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="form.invalid">CADASTRAR</button>
+</form>
+</div>

@@ -1,0 +1,19 @@
+<div class="container__list">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Senac_logo.svg/2560px-Senac_logo.svg.png" alt="">
+  <div class="list__products">
+    <div class="product" *ngFor="let product of todoList; let indexProduct = index;">
+      <h3>{{product.nome}}</h3>
+      <div class="icons__list">
+        <div>
+          <button class="edit" (click)="updateItem(indexProduct)">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button class="trash" (click)="removeItem(indexProduct)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button routerLink="/todo/create">NOVO PRODUTO</button>
+</div>
