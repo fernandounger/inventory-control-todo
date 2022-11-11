@@ -61,4 +61,7 @@ export class UpdateComponent implements OnInit {
       '/todo/list'
     ])
   }
+  get f(){
+    return this.form.controls;
+  }
 }

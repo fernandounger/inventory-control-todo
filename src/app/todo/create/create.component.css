@@ -4,6 +4,10 @@
   width: 100%;
   background-color: #202024;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
 
 .container__create form{
@@ -39,5 +43,16 @@
   background-color: #F18B20;
   font-weight: 700;
   font-size: 1rem;
+  cursor: pointer;
+}
+.container__create form div > span{
+  color: #F18B20;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+.container__create .product__register{
+  color: #468FF2;
+  text-decoration: underline;
+  font-weight: 700;
   cursor: pointer;
 }

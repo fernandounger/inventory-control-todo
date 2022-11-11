@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
   initForm(): void {
     this.form = this.formBuilder.group({
       nome: [ null , [Validators.required]],
-      quantidade: [ null , [Validators.required, Validators.pattern("^[0-9]*$") , Validators.min(1), Validators.max(2000)]],
+      quantidade: [ null , [Validators.required, Validators.min(1), Validators.max(2000)]],
       validade:[ null , [Validators.required]],
       categoria: [ null , [Validators.required]],
       fornecedor: [ null , [Validators.required]]
